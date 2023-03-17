@@ -1,0 +1,36 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type PizzasType {
+  id: ID!
+  name: String!
+  price: Int!
+  ingredients: [String!]!
+}
+
+type CreateOrderType {
+  clientName: String!
+  pizzas: [Float!]!
+}
+
+type OrdersType {
+  clientName: String!
+  pizzas: [PizzasType!]!
+}
+
+type Query {
+  pizzas: [PizzasType!]!
+  pizza(id: Float!): PizzasType!
+  orders: [OrdersType!]!
+  orderByName(clientName: String!): [OrdersType!]!
+}
+
+type Mutation {
+  createOrder(input: CreateOrderInputType!): CreateOrderType!
+}
+
+input CreateOrderInputType {
+  clientName: String!
+  pizzas: [Float!]!
+}
